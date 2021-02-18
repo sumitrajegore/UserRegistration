@@ -8,21 +8,21 @@ public class UserRegistration {
 		
 		Scanner sc = new Scanner(System.in);
 		String name;
-		System.out.println("enter first name :");
+		System.out.println("enter last name :");
 		name = sc.nextLine();
-		firstname(name);
+		lastname(name);
 	}
-	public static void firstname(String name) {
+	public static void lastname(String name) {
 		
 		Pattern p = Pattern.compile("^[A-Z]{1}[A-Za-z]{2,}+$");
 		Matcher m = p.matcher(name);
 		if(m.find())
 		{
-			System.out.println("name is valid");
+			System.out.println("lastname is valid");
 		}
 		else
 		{
-			System.out.println("name is invalid");
+			System.out.println("lastname is invalid");
 		}
 		System.out.println("length :"+name.length());
 	}
