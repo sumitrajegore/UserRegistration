@@ -10,12 +10,12 @@ public class UserRegistration {
 		String name;
 		System.out.println("enter passward :");
 		name = sc.nextLine();
-		passward(name);
+		passward1(name);
 	}
-	public static void passward(String name) {
+	public static void passward1(String name) {
 
                 //Pattern p = Pattern.compile("^[a-zA-Z0-9]{3}+(.{1}[a-zA-Z0-9]{3}+)*@{1}[a-zA-Z0-9]{2}+(.{1}[a-zA-Z0-9]{2}+)*(.{1}[a-zA-Z0-9]{2}+)$");
-		Pattern p = Pattern.complie("^[a-zA-Z0-9]{8,}$");
+		Pattern p = Pattern.compile("^([A-Z])[a-zA-Z0-9]{8,}$");
                 Matcher m = p.matcher(name);
 		if(m.find())
 		{
