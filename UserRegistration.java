@@ -8,21 +8,22 @@ public class UserRegistration {
 		
 		Scanner sc = new Scanner(System.in);
 		String name;
-		System.out.println("enter last name :");
+		System.out.println("enter mobile number :");
 		name = sc.nextLine();
-		lastname(name);
+		mobileno(name);
 	}
-	public static void lastname(String name) {
+	public static void mobileno(String name) {
 		
-		Pattern p = Pattern.compile("^[A-Z]{1}[A-Za-z]{2,}+$");
+		Pattern p = Pattern.compile("^[9][1][\\s][0-9]{10}+$");
+               //Pattern p = Pattern.compile("^[.]{1}[a-z]{3,}[@]{1}[.]{1}[.]{1}[a-z]{2,}+$");
 		Matcher m = p.matcher(name);
 		if(m.find())
 		{
-			System.out.println("lastname is valid");
+			System.out.println("mobile no is valid");
 		}
 		else
 		{
-			System.out.println("lastname is invalid");
+			System.out.println("mobile no is invalid");
 		}
 		System.out.println("length :"+name.length());
 	}
