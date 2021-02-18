@@ -14,7 +14,7 @@ public class UserRegistration {
 	}
 	public static void mobileno(String name) {
 		
-		Pattern p = Pattern.compile("^[9][1][\\s][0-9]{10}+$");
+		Pattern p = Pattern.compile("^[9][1][\\s][7-9]{1}[0-9]{9}+$");
                //Pattern p = Pattern.compile("^[.]{1}[a-z]{3,}[@]{1}[.]{1}[.]{1}[a-z]{2,}+$");
 		Matcher m = p.matcher(name);
 		if(m.find())
