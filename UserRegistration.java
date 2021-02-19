@@ -1,31 +1,57 @@
-import java.util.Scanner;
+package com.userregistration;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-	public static void main(String[] args) {
+    public boolean nameValid(String name) {
+       
+        Pattern p = Pattern.compile("^[A-Z][a-zA-Z]{3,}");
+        Matcher m = p.matcher(name);
+        return m.find();
+    }
 
-		Scanner sc = new Scanner(System.in);
-		String name;
-		System.out.println("enter email :");
-		name = sc.nextLine();
-		allemail(name);
-	}
-	public static void allemail(String name) {
+    public boolean lastValid(String name) {
+        
+        Pattern p = Pattern.compile("^[A-Z][a-zA-Z]{3,}");
+        Matcher m = p.matcher(name);
+        return m.find();
+    }
+    
+    public boolean emailValid(String email) {
+    	
+        Pattern p = Pattern.compile("^abc[a-zA-Z0-9.]*@bl[.]co[.][a-z]{2,3}");
+        Matcher m = p.matcher(email);
+        return m.find();
+    }
 
-                //Pattern p = Pattern.compile("^[a-zA-Z0-9]{3}+(.{1}[a-zA-Z0-9]{3}+)*@{1}[a-zA-Z0-9]{2}+(.{1}[a-zA-Z0-9]{2}+)*(.{1}[a-zA-Z0-9]{2}+)$");
-		Pattern p = Pattern.compile("^[a-z]{3,}([\\.\\+\\-]?[0-9]{3,})?[@][a-z0-9]{1,}[.][a-z]{2,4}[,]?([.][a-z]{2,4}[.]?)?$");
-                Matcher m = p.matcher(name);
-		if(m.find())
-		{
-			System.out.println("email is valid");
-		}
-		else
-		{
-			System.out.println("email is invalid");
-		}
-		System.out.println("length :"+name.length());
-	}
+    public boolean phoneValid(String phoneNumber) {
+       
+        Pattern p = Pattern.compile("^[0-9]{2}[\\s][7-9]{2}[0-9]{8}");
+        Matcher m = p.matcher(phoneNumber);
+        return m.find();
+    }
+
+    public boolean passwordValid(String password) {
+        
+        Pattern p = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]).{8,}$");
+        Matcher m = p.matcher(password);
+        return m.find();
+    }
+
+    public String analyseMood(String message) {
+    	
+        if (message.contains("sad"))
+            return "SAD";
+        else
+            return "HAPPY";
+    }
+   public boolean allemailValid(String email) {
+     	
+        Pattern p = Pattern.compile("^[a-z]{3,}([\\.\\+\\-]?[0-9]{3,})?[@][a-z0-9]{1,}[.][a-z]{2,4}[,]?([.][a-z]{2,4}[.]?)?$");
+        Matcher m = p.matcher(email);
+        return m.find();
+    }
+
 }
-
